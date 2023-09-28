@@ -64,6 +64,9 @@ pipeline{
                     docker run -d --network trio --name mysql mtkg/trio-db-img:latest
                     docker run -d --network trio --name flask-app mtkg/trio-flask-app-img:latest
                     docker run -d -p 80:80 --network trio --name mynginx mtkg/trio-nginx-img:latest
+
+                    #RANDOM COMMENT TO TRIGGER BUILD - 1
+
                     '''
                 }
             }
