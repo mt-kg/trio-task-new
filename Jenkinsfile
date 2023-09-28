@@ -44,7 +44,7 @@ pipeline{
                     #SSH onto app server as jenkins user:
                     ssh -i "~/.ssh/id_rsa_new_vm" jenkins@10.154.0.27 << EOF
 
-                    #Pull latest images from Docker Hub:
+                    #Pull latest images from DockerHub:
                     docker image pull mtkg/trio-nginx-img
                     docker image pull mtkg/trio-flask-app-img
                     docker image pull mtkg/trio-db-img
