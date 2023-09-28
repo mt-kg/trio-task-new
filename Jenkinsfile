@@ -28,12 +28,12 @@ pipeline{
             stage('Clean up old images on Jenkins'){
                 steps{
                     sh '''
-                    #Delete build number images but keep latest:
-                    #docker rmi mtkg/trio-nginx-img
+                    #Delete build number and latest images:
+                    docker rmi mtkg/trio-nginx-img
                     docker rmi mtkg/trio-nginx-img:${BUILD_NUMBER}
-                    #docker rmi mtkg/trio-flask-app-img
+                    docker rmi mtkg/trio-flask-app-img
                     docker rmi mtkg/trio-flask-app-img:${BUILD_NUMBER}
-                    #docker rmi mtkg/trio-db-img
+                    docker rmi mtkg/trio-db-img
                     docker rmi mtkg/trio-db-img:${BUILD_NUMBER}
                     '''
                 }
