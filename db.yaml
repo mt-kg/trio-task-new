@@ -10,6 +10,11 @@ spec:
     image: mtkg/trio-db-img:latest
     ports:
     - containerPort: 3306
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: root
+    - name: MYSQL_DATABASE
+      value: flask-db
 ---
 apiVersion: v1
 kind: Service
