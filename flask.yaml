@@ -10,6 +10,9 @@ spec:
     image: mtkg/trio-flask-app-img:latest
     ports:
     - containerPort: 5000
+    env:
+    - name: PASSWORD
+      value: root
 ---
 apiVersion: v1
 kind: Service
