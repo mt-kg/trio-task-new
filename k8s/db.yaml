@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mysql
+  name: mysql-pod
   labels:
-    app: mysql
+    app: mysql-pod
 spec:
   containers:
-  - name: mysql
+  - name: mysql-container
     image: mtkg/trio-db-img:latest
     ports:
     - containerPort: 3306
@@ -22,7 +22,7 @@ metadata:
   name: mysql
 spec:
   selector:
-    app: mysql
+    app: mysql-pod
   ports: 
   - protocol: TCP
     port: 3306
