@@ -20,7 +20,7 @@ metadata:
   name: flask-app
 spec:
   selector:
-    app: flask
+    app: flask-pods
   ports: 
   - protocol: TCP
     port: 5000
@@ -32,12 +32,12 @@ kind: Deployment
 metadata:
   name: flask-deployment
   labels:
-    app: flask
+    app: flask-pods
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: flask
+      app: flask-pods
   strategy:
     rollingUpdate:
       maxSurge: 20%
@@ -45,7 +45,7 @@ spec:
   template:
     metadata:
       labels:
-        app: flask
+        app: flask-pods
     spec:
       containers:
       - name: flask-container

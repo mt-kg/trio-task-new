@@ -17,7 +17,7 @@ metadata:
   name: nginx-service
 spec:
   selector:
-    app: nginx
+    app: nginx-pods
   ports: 
   - protocol: TCP
     port: 80
@@ -29,12 +29,12 @@ kind: Deployment
 metadata:
   name: nginx-deployment
   labels:
-    app: nginx
+    app: nginx-pods
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: nginx
+      app: nginx-pods
   strategy:
     rollingUpdate:
       maxSurge: 20%
@@ -42,7 +42,7 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx-pods
     spec:
       containers:
       - name: nginx-container
