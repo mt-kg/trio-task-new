@@ -50,6 +50,7 @@ spec:
       containers:
       - name: flask-container
         image: mtkg/trio-flask-app-img:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
         env:

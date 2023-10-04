@@ -8,6 +8,7 @@ spec:
   containers:
   - name: mysql-container
     image: mtkg/trio-db-img:latest
+    imagePullPolicy: Always
     ports:
     - containerPort: 3306
     env:

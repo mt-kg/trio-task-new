@@ -47,5 +47,6 @@ spec:
       containers:
       - name: nginx-container
         image: mtkg/trio-nginx-img:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
